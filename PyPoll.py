@@ -161,7 +161,7 @@ with open(file_to_load) as election_data:
             # 3. Calculate the percentage of votes.
             vote_percentage=float(votes)/float(total_votes)*100
             # 4. Print the candidate name and percentage of votes.
-            print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
 
             candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
@@ -188,14 +188,16 @@ with open(file_to_load) as election_data:
             # To do: print out each candidate's name, vote count, and percentage of
         # votes to the terminal 
 
-winning_candidate_summary = (
+        winning_candidate_summary = (
     f"-------------------------\n"
     f"Winner: {winning_candidate}\n"
     f"Winning Vote Count: {winning_count:,}\n"
     f"Winning Percentage: {winning_percentage:.1f}%\n"
     f"-------------------------\n")
-print(winning_candidate_summary)
+        print(winning_candidate_summary)
 
+# Save the winning candidate's results to the text file.
+        txt_file.write(winning_candidate_summary)
 
 
   
